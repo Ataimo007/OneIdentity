@@ -1,7 +1,10 @@
 package com.example.oneidentity.app.services;
 
+import android.content.Context;
+
 import androidx.paging.PagingConfig;
 
+import com.example.oneidentity.R;
 import com.example.oneidentity.app.models.UserPage;
 import com.google.common.util.concurrent.ListenableFuture;
 
@@ -21,18 +24,19 @@ public class APIService {
 
     private static APIService apis;
 
-    public static APIService getInstance()
+    public static APIService getInstance(Context context)
     {
         if (apis == null)
-            apis = new APIService();
+            apis = new APIService(context);
         return apis;
     }
 
     private final APIEndpoint service;
-    private final String apiKey = "6103cf32c5c6dd1942cd8bdc";
+    private final String apiKey;
 
-    public APIService()
+    public APIService(Context context)
     {
+        apiKey = context.getString(R.string.api_key);
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder builder = new OkHttpClient.Builder();

@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">OneIdentity</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">One Identity</string>
+    <string name="api_key">6103cf32c5c6dd1942cd8bdc</string>
 </resources>

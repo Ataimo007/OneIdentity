@@ -52,9 +52,6 @@ public class AppDatabaseService {
         @Query("SELECT * FROM user")
         public abstract List<User> getAll();
 
-//        @Query("SELECT * FROM user WHERE uid > :uid LIMIT :size")
-//        public abstract PagingSource<Integer, User> getPagedUsers(int uid, int size );
-
         @Query("SELECT * FROM user LIMIT :size OFFSET :offset")
         public abstract ListenableFuture<List<User>> getSomeUsers(int offset, int size );
 
@@ -79,12 +76,6 @@ public class AppDatabaseService {
         {
             return getSomeUsersNow( size * page, size );
         }
-
-//        @Transaction
-//        public ListenableFuture<List<User>> getUsersNow(int page, int size)
-//        {
-//            return getSomeUsers( size * page, size );
-//        }
 
         @Transaction
         public int getCount(User user)

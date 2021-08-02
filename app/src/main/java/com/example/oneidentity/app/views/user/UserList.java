@@ -56,7 +56,6 @@ public class UserList extends Fragment {
         bgExecutor = new ViewModelProvider(requireActivity()).get(MainActivity.ApplicationModel.class).getBgExecutor();
         viewModel = new ViewModelProvider(requireActivity()).get(UserViewModel.class);
         database = AppDatabaseService.getInstance(requireContext());
-//        AppDatabaseService.UserDao userDao = database.getUserDao();
     }
 
     @Override
@@ -65,17 +64,6 @@ public class UserList extends Fragment {
         View view = inflater.inflate(R.layout.user_list, container, false);
         initView(view);
 
-        // Set the adapter
-//        if (view instanceof RecyclerView) {
-//            Context context = view.getContext();
-//            RecyclerView recyclerView = (RecyclerView) view;
-//            if (mColumnCount <= 1) {
-//                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-//            } else {
-//                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-//            }
-//            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(PlaceholderContent.ITEMS));
-//        }
         return view;
     }
 
@@ -101,7 +89,7 @@ public class UserList extends Fragment {
         Pager<Integer, User> pager = new Pager(
                 new PagingConfig(pageSize),
                 null, // initialKey
-                UserInterface.getUserMediator(APIService.getInstance(), database, bgExecutor),
+                UserInterface.getUserMediator(APIService.getInstance(requireContext()), database, bgExecutor),
                 () -> database.getUserDao().getPagedUsers(0, pageSize)
 //                () -> UserInterface.getUserSource(database, bgExecutor)
         );
@@ -154,7 +142,6 @@ public class UserList extends Fragment {
         @BindingAdapter({"imageUrl"})
         public static void loadImage(ImageView view, String url) {
             Glide.with(view.getContext()).load(url)
-//                .placeholder(placeholder)
                     .fitCenter().into(view);
         }
     }

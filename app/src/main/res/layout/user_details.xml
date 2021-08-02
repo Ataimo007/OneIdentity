@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".app.views.UserDetails">
+    <data>
+        <variable name="user" type="com.example.oneidentity.app.models.User"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_primary">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/color_secondary_variant"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
+
+                app:toolbarId="@+id/toolbar">
+
+                <ImageView
+                    android:id="@+id/app_bar_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{user.picture}"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:behavior_overlapTop="32dp"
+
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_secondary_variant">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="64dp"
+                    android:text="User's Details"
+                    android:textAllCaps="true"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/serial_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Serial Number"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/user_serial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{user.id}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/color_secondary_variant2"
+                    app:layout_constraintStart_toStartOf="@+id/serial_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/serial_holder"
+                    tools:text="0000 0000 0000 0000 0000" />
+
+                <TextView
+                    android:id="@+id/title_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Title"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/serial_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/user_serial" />
+
+                <TextView
+                    android:id="@+id/user_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{user.title}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/color_secondary_variant2"
+                    app:layout_constraintStart_toStartOf="@+id/title_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/title_holder"
+                    tools:text="MR" />
+
+                <TextView
+                    android:id="@+id/firstname_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="First Name"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/serial_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/user_title" />
+
+                <TextView
+                    android:id="@+id/user_firstname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{user.firstName}"
+                    android:textColor="@color/color_secondary_variant2"
+                    app:layout_constraintStart_toStartOf="@+id/firstname_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/firstname_holder"
+                    tools:text="Ataimo" />
+
+                <TextView
+                    android:id="@+id/lastname_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Last Name"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/serial_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/user_firstname" />
+
+                <TextView
+                    android:id="@+id/user_lastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{user.lastname}"
+                    android:textColor="@color/color_secondary_variant2"
+                    app:layout_constraintStart_toStartOf="@+id/lastname_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/lastname_holder"
+                    tools:text="Edem" />
+
+                <TextView
+                    android:id="@+id/email_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Email Address"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/serial_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/user_lastname" />
+
+                <TextView
+                    android:id="@+id/user_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="320dp"
+                    android:text="@{user.email}"
+                    android:textColor="@color/color_secondary_variant2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/email_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/email_holder"
+                    tools:text="edemataimo@gmail.com" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

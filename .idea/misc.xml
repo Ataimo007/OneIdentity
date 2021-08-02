@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/activity_main.xml" value="0.26132246376811596" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/fragment_item.xml" value="0.28532608695652173" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/fragment_item_list.xml" value="0.28532608695652173" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/fragment_user_datails.xml" value="0.24592391304347827" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/main_app.xml" value="0.28532608695652173" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/splash_screen.xml" value="0.25" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/test_layout.xml" value="0.2463768115942029" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/user_card.xml" value="0.3020833333333333" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/user_datails.xml" value="0.33" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/user_details.xml" value="0.22" />
+        <entry key="..\:/apps/OneIdentity/app/src/main/res/layout/user_list.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
